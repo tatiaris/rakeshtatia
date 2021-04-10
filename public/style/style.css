@@ -1,0 +1,261 @@
+/* General Settings */
+* {
+  font-family: 'Roboto', sans-serif;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hide;
+  color: inherit;
+  transition: 200ms;
+  scrollbar-width: none;
+  font-weight: 400;
+  line-height: 1.25;
+}
+body {
+  margin: 0px;
+}
+
+/* Global Variables */
+:root {
+  --light: #fff;
+  --light-accent-1: teal;
+  --light-accent-2: orange;
+
+  --dark: #000;
+  --dark-accent-1: cyan;
+  --dark-accent-2: yellow;
+
+  --success-light: rgb(0, 140, 0);
+  --danger-light: red;
+  --calm-light: rgb(0, 153, 255);
+
+  --success-dark: rgb(100, 255, 100);
+  --danger-dark: rgb(255, 100, 100);
+  --calm-dark: rgb(255, 255, 100);
+}
+
+/* Containers Section */
+body.light {
+  background-color: var(--light);
+  color: var(--dark);
+}
+body.dark {
+  background-color: var(--dark);
+  color: var(--light);
+}
+.page {
+  margin: auto;
+  padding: 50px 0;
+  width: 750px;
+  max-width: 90vw;
+}
+.container.flex {
+  display: flex;
+  gap: 5px;
+}
+.container.flex.wrap {
+  flex-wrap: wrap;
+}
+
+/* Headings Section */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+}
+
+/* Buttons Section */
+button {
+  width: 150px;
+  font-size: 0.8rem;
+  padding: 0.5rem 1rem;
+}
+button.auto {
+  width: auto;
+}
+button:hover {
+  cursor: pointer;
+}
+
+.light button {
+  color: var(--light);
+  background-color: var(--light-accent-1);
+  border: 1px solid var(--light-accent-1);
+}
+.light button.day {
+  background-color: var(--light);
+  color: var(--dark);
+  border: 1px solid var(--dark);
+}
+.light button.night {
+  background-color: var(--dark);
+  border: 1px solid var(--dark);
+}
+.light button.success {
+  background-color: var(--success-light);
+  border: 1px solid var(--success-light);
+}
+.light button.danger {
+  background-color: var(--danger-light);
+  border: 1px solid var(--danger-light);
+}
+.light button.calm {
+  background-color: var(--calm-light);
+  border: 1px solid var(--calm-light);
+}
+
+.dark button {
+  color: var(--dark);
+  background-color: var(--dark-accent-1);
+  border: 1px solid var(--dark-accent-1);
+}
+.dark button.day {
+  background-color: var(--light);
+  border: 1px solid var(--light);
+  color: var(--dark);
+}
+.dark button.night {
+  background-color: var(--dark);
+  border: 1px solid var(--light);
+  color: var(--light);
+}
+.dark button.success {
+  background-color: var(--success-dark);
+  border: 1px solid var(--success-dark);
+}
+.dark button.danger {
+  background-color: var(--danger-dark);
+  border: 1px solid var(--danger-dark);
+}
+.dark button.calm {
+  background-color: var(--calm-dark);
+  border: 1px solid var(--calm-dark);
+}
+
+/* Button Hover Effects */
+.light button:hover {
+  background-color: var(--light);
+  color: var(--light-accent-1);
+}
+.dark button:hover {
+  background-color: var(--dark);
+  color: var(--dark-accent-1);
+}
+.light button.day:hover {
+  background-color: var(--dark);
+  color: var(--light);
+  border: 1px solid var(--dark);
+}
+.dark button.night:hover {
+  background-color: var(--light);
+  border: 1px solid var(--dark);
+  color: var(--dark);
+}
+
+.light button.night:hover {
+  color: var(--dark);
+}
+.light button.success:hover {
+  color: var(--success-light);
+}
+.light button.danger:hover {
+  color: var(--danger-light);
+}
+.light button.calm:hover {
+  color: var(--calm-light);
+}
+
+.dark button.day:hover {
+  color: var(--light);
+}
+.dark button.success:hover {
+  color: var(--success-dark);
+}
+.dark button.danger:hover {
+  color: var(--danger-dark);
+}
+.dark button.calm:hover {
+  color: var(--calm-dark);
+}
+
+/* Links Section */
+a {
+  text-decoration: none;
+}
+a::after {
+  transition: 250ms;
+  display: block;
+  content: '';
+  width: 0%;
+  height: 2px;
+}
+a:hover::after {
+  width: 100%;
+}
+
+.light a {
+  color: var(--light-accent-1);
+}
+.light a::after {
+  background-color: var(--light-accent-1);
+}
+.light a.success {
+  color: var(--success-light);
+}
+.light a.success::after {
+  background-color: var(--success-light);
+}
+.light a.danger {
+  color: var(--danger-light);
+}
+.light a.danger::after {
+  background-color: var(--danger-light);
+}
+.light a.calm {
+  color: var(--calm-light);
+}
+.light a.calm::after {
+  background-color: var(--calm-light);
+}
+
+.dark a {
+  color: var(--dark-accent-1);
+}
+.dark a::after {
+  background-color: var(--dark-accent-1);
+}
+.dark a.success {
+  color: var(--success-dark);
+}
+.dark a.success::after {
+  background-color: var(--success-dark);
+}
+.dark a.danger {
+  color: var(--danger-dark);
+}
+.dark a.danger::after {
+  background-color: var(--danger-dark);
+}
+.dark a.calm {
+  color: var(--calm-dark);
+}
+.dark a.calm::after {
+  background-color: var(--calm-dark);
+}
+
+/* Lists */
+ul {
+  margin-top: 5px;
+}
+li {
+  display: list-item;
+  list-style-type: "\2014";
+  padding-inline-start: 1ch;
+  margin-bottom: 0;
+  font-size: 1em;
+  line-height: 1.5;
+}
+.square > li {
+  list-style-type: square;
+}
+.arrow > li {
+  list-style-type: upper-alpha;
+}

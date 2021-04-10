@@ -1,0 +1,124 @@
+/* Global Variables */
+:root {
+  --light: #fff;
+  --light-accent-1: teal;
+  --light-accent-2: orange;
+
+  --dark: #000;
+  --dark-accent-1: cyan;
+  --dark-accent-2: yellow;
+
+  --success-light: rgb(0, 140, 0);
+  --danger-light: red;
+  --calm-light: rgb(0, 153, 255);
+
+  --success-dark: rgb(100, 255, 100);
+  --danger-dark: rgb(255, 100, 100);
+  --calm-dark: rgb(255, 255, 100);
+
+  --main-color: #fe0000;
+  --bg-color: #000;
+}
+
+/* General Settings */
+* {
+  font-family: 'Roboto', sans-serif;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hide;
+  color: inherit;
+  transition: 200ms;
+  scrollbar-width: none;
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--main-color);
+}
+body {
+  margin: 0px;
+  background-color: var(--bg-color) !important;
+}
+
+section {
+  width: 100% !important;
+  padding: 0 20px !important;
+}
+main {
+  padding: 0 !important;
+}
+
+.navbar {
+  padding: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.logo-container .title {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  user-select: none;
+  letter-spacing: 4px;
+  position: relative;
+}
+.logo-container .title::after {
+	display: block;
+	content: '';
+	height: 20px;
+	width: 100%;
+	background-color: transparent;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	border-bottom: 2px solid var(--main-color);
+	border-right: 2px solid var(--main-color);
+}
+
+.navbar > .menu {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  letter-spacing: 2px;
+}
+
+.navbar a {
+  color: var(--light);
+  text-align: center;
+}
+
+a.underline::after {
+  transition: 250ms;
+  display: block;
+  content: '';
+  width: 0%;
+  height: 2px;
+  background-color: var(--main-color);
+  position: relative;
+  top: 5px;
+}
+a.underline:hover::after {
+  width: 100%;
+}
+a.underline.active::after {
+  width: 100%;
+}
+
+.react-photo-gallery--gallery img:hover {
+  cursor: pointer;
+}
+.react-photo-gallery--gallery img {
+  object-fit: cover;
+  min-height: 300px;
+}
+.css-yrspe {
+  background-color: rgba(0, 0, 0, 0.95) !important;
+}
+@media (max-width: 500px) {
+
+}
