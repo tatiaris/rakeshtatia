@@ -37,6 +37,7 @@
 body {
   margin: 0px;
   background-color: var(--bg-color) !important;
+  cursor: url("/cursors/default.cur"), default;
 }
 
 section {
@@ -45,6 +46,23 @@ section {
 }
 main {
   padding: 0 !important;
+}
+
+button > a {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+a:hover {
+  cursor: url("/cursors/pointer.cur"), pointer;
+}
+button:hover {
+  cursor: url("/cursors/pointer.cur"), pointer !important; 
+}
+summary:hover {
+  cursor: url("/cursors/pointer.cur"), pointer !important; 
 }
 
 .navbar {
@@ -79,17 +97,23 @@ main {
 	border-bottom: 2px solid var(--main-color);
 	border-right: 2px solid var(--main-color);
 }
-
+.navbar > .logo-container > a {
+  display: flex;
+  gap: 10px;
+}
 .navbar > .menu {
   display: flex;
   align-items: center;
   gap: 25px;
   letter-spacing: 2px;
 }
-
 .navbar a {
   color: var(--light);
   text-align: center;
+}
+
+details > div {
+  border: 2px solid #333;
 }
 
 a.underline::after {
@@ -110,7 +134,7 @@ a.underline.active::after {
 }
 
 .react-photo-gallery--gallery img:hover {
-  cursor: pointer;
+  cursor: url('/cursors/pointer.cur'), pointer !important;
 }
 .react-photo-gallery--gallery img {
   object-fit: cover;
@@ -119,6 +143,46 @@ a.underline.active::after {
 .css-yrspe {
   background-color: rgba(0, 0, 0, 0.95) !important;
 }
+
+.category-img-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.link-img-container {
+  overflow: hidden;
+  position: relative;
+}
+.link-img-container * {
+  transition: 2000ms;
+}
+.link-img-container > div {
+  display: flex;
+  opacity: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	font-size: 2rem;
+	letter-spacing: 5px;
+}
+.link-img-container > img {
+  transition-timing-function: ease-out;
+  object-fit: cover;
+  display: block;
+}
+.link-img-container:hover > img {
+  transform: scale(1.1);
+  opacity: 0.2;
+}
+.link-img-container:hover > div {
+  opacity: 1;
+  cursor: url("/cursors/pointer.cur"), pointer;
+}
+
 @media (max-width: 500px) {
 
 }

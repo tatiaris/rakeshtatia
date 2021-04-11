@@ -1,9 +1,7 @@
-import React, { lazy, Suspense } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import Link from 'next/link'
-import { Tabs, Row, Loading, ButtonDropdown } from '@geist-ui/react'
-import { Homepage } from "./Homepage"
-import { Home, Monitor } from '@geist-ui/react-icons'
+import { ButtonDropdown } from '@geist-ui/react'
 import { capitalize } from "../components/Helper"
 
 /**
@@ -16,23 +14,24 @@ export const GeistNavbar = (props) => {
     Portfolio: "inactive",
     Films: "inactive",
     Contact: "inactive",
-    Baby: "inactive"
+    Baby: "inactive",
+    Wedding: "inactive"
   };
   activeStatus[subPage] = "active";
 
   let categoryStatus = {
     Portfolio: false,
-    Baby: false
+    Baby: false,
+    Wedding: false
   };
-  let categoryList = ["Portfolio", "Baby"]
   if (subPage in categoryStatus) categoryStatus[subPage] = true;
   else categoryStatus['Portfolio'] = true;
 
   return (
     <div className="navbar">
       <div className="logo-container">
-        <img src="/favicon.png"></img>
-        <Link href="/"><a><span className="title">RAKESH TATIA PHOTOGRAPHY</span></a></Link>
+        
+        <Link href="/"><a><img src="/favicon.png"></img><span className="title">RAKESH TATIA PHOTOGRAPHY</span></a></Link>
       </div>
       <div className="menu">
         <Link href="/"><a className={`underline ${activeStatus['Portfolio']}`}>Portfolio</a></Link>
@@ -41,7 +40,7 @@ export const GeistNavbar = (props) => {
         <ButtonDropdown type="secondary" size="small">
           <ButtonDropdown.Item type="secondary" main={categoryStatus['Portfolio']}><Link href="/"><a>Categories</a></Link></ButtonDropdown.Item>
           <ButtonDropdown.Item type="secondary" main={categoryStatus['Baby']}><Link href="/baby"><a>Baby</a></Link></ButtonDropdown.Item>
-          {/* <ButtonDropdown.Item type="secondary" main={false}>Tertiary Action</ButtonDropdown.Item> */}
+          <ButtonDropdown.Item type="secondary" main={categoryStatus['Wedding']}><Link href="/wedding"><a>Wedding</a></Link></ButtonDropdown.Item>
         </ButtonDropdown>
       </div>
     </div>

@@ -1,6 +1,6 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import { useRouter } from 'next/router'
-import { Button, Page, Text, Image } from '@geist-ui/react';
+import { Page } from '@geist-ui/react';
 import GeistNavbar from '../components/GeistNavbar';
 import Copyright from '../components/Copyright';
 import CustomHead from '../components/CustomHead';
