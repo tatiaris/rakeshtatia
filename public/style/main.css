@@ -16,8 +16,8 @@
   --danger-dark: rgb(255, 100, 100);
   --calm-dark: rgb(255, 255, 100);
 
-  --main-color: #f00;
-  --bg-color: #ffeaea;
+  --main-color: #ff6c00;
+  --bg-color: #ffecde;
 }
 ::selection {
 	background-color: #ffeaea !important;
@@ -41,15 +41,13 @@ body {
   margin: 0px;
   background-color: var(--bg-color) !important;
   cursor: url("/cursors/default.cur"), default;
-}
-body {
-  min-height: 100vh;
   overflow-x: hidden;
 }
 
 section {
   width: 100% !important;
   padding: 0 20px !important;
+  min-height: 50vh !important;
 }
 main {
   padding: 0 !important;
@@ -83,27 +81,12 @@ summary:hover {
 
 .logo-container {
   display: flex;
-  align-items: center;
   gap: 20px;
 }
 .logo-container .title {
-  font-size: 1.2rem;
   font-weight: bold;
   user-select: none;
   letter-spacing: 4px;
-  position: relative;
-}
-.logo-container .title::after {
-	display: block;
-	content: '';
-	height: 20px;
-	width: 100%;
-	background-color: transparent;
-	position: absolute;
-	top: 6px;
-	left: 6px;
-	border-bottom: 2px solid var(--main-color);
-	border-right: 2px solid var(--main-color);
 }
 .navbar > .logo-container > a {
   display: flex;
@@ -209,11 +192,7 @@ a.underline.active::after {
 @media (max-width: 600px) {
   .logo-container .title {
     font-size: 1rem;
-    letter-spacing: 5px;
     text-align: left;
-  }
-  .logo-container .title::after {
-    display: none;
   }
 }
 @media (max-width: 1000px) {
@@ -268,7 +247,7 @@ a.underline.active::after {
     left: 0;
     transform: translateX(-100%);
     background: var(--light);
-    padding: 1rem 25px;
+    padding: 1rem 10px;
     border: 0;
     border-radius: .25em 0 0 .25em;
   }

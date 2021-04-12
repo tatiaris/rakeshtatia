@@ -35,7 +35,7 @@ export const GeistNavbar = (props) => {
   return (
     <div className={`navbar ${navStatus}`}>
       <div className="logo-container">
-        <Link href="/"><a><img width="36" height="36" src="/favicon.png"></img><span className="title">TATIA PHOTOGRAPHY</span></a></Link>
+        <Link href="/"><a><img width="40" height="40" src="/favicon.png"></img><span className="title">RAKESH TATIA<br/>PHOTOGRAPHY</span></a></Link>
       </div>
       <div className="menu">
         <Link href="/"><a className={`underline ${activeStatus['Portfolio']}`}>Portfolio</a></Link>
