@@ -1,5 +1,5 @@
 export const websiteInfo = {
-  name: "Rakesh Tatia Photography",
+  name: "Tatia Photography",
   description: "",
   url: "https://rakeshtatia.com",
   pages: {
