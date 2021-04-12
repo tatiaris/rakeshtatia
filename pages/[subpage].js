@@ -1,17 +1,18 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { useRouter } from 'next/router'
 import { Page } from '@geist-ui/react';
 import GeistNavbar from '../components/GeistNavbar';
-import Copyright from '../components/Copyright';
+import Footer from '../components/Footer';
 import CustomHead from '../components/CustomHead';
 import Gallery from "react-photo-gallery";
-import { allPhotos } from '../components/Constants';
 import Carousel, { Modal, ModalGateway } from "react-images";
+import { mapAllPhotosSrc } from '../components/Helper';
 
 export default function Subpage() {
   const router = useRouter()
   const { subpage } = router.query
-  const photos = allPhotos[subpage] || []
+  let allPhotosMapped = mapAllPhotosSrc()
+  let photos = allPhotosMapped[subpage] || []
 
   const [currentImage, setCurrentImage] = useState(0);
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
@@ -31,22 +32,26 @@ export default function Subpage() {
       <GeistNavbar page={subpage} />
       <CustomHead page={subpage} />
       <Page>
-        <Gallery photos={photos} onClick={openLightbox} />
+        <Gallery photos={photos} targetRowHeight={600} onClick={openLightbox} />
         <ModalGateway>
           {viewerIsOpen ? (
             <Modal onClose={closeLightbox}>
               <Carousel
                 currentIndex={currentImage}
-                views={photos.map(x => ({
-                  ...x,
-                  srcset: x.srcSet,
-                  caption: x.title
-                }))}
+                views={photos.map(x => {
+                  console.log(x);
+                  return ({
+                    ...x,
+                    srcset: x.srcSet,
+                    caption: x.title
+                    })
+                })}
               />
             </Modal>
           ) : null}
         </ModalGateway>
       </Page>
+      <Footer/>
     </>
   );
 }
